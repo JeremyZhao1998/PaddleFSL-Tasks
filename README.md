@@ -1,5 +1,5 @@
 # PaddleFSL Tasks
-This repository contains all the example files and trained model parameters of `paddlefsl` package in [FSL-Mate](https://github.com/tata1661/FSL-Mate) .
+This repository contains all the example files, hyper-parameters and trained model parameters of `paddlefsl` package in [FSL-Mate](https://github.com/tata1661/FSL-Mate) .
 
 [FSL-Mate](https://github.com/tata1661/FSL-Mate) is a collection of resources for few-shot learning (FSL), now containing paper list of few-shot learning and a python toolkit of common datasets, algorithms and functions building on top of [PaddlePaddle](https://github.com/PaddlePaddle).
 

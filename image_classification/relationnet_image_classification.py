@@ -239,7 +239,7 @@ RELATION_MODEL = paddlefsl.backbones.ConvRelationModel(input_size=EMBEDDING_MODE
 LR = 0.001
 OPTIMIZER = paddle.optimizer.Adam(learning_rate=LR,
                                   parameters=EMBEDDING_MODEL.parameters() + RELATION_MODEL.parameters())
-EPOCHS = 10
+EPOCHS = 30
 TEST_EPOCHS = 10
 EPISODES = 1000
 REPORT_EPOCH = 1
@@ -271,15 +271,14 @@ def main():
     EMBEDDING_MODEL.load_dict(state_dict)
     state_dict = paddle.load(train_dir + '/' + TEST_PARAM_FILE + '_relation.params')
     RELATION_MODEL.load_dict(state_dict)
-    for i in range(5):
-        relationnet.meta_testing(embedding_model=EMBEDDING_MODEL,
-                                 relation_model=RELATION_MODEL,
-                                 test_dataset=TEST_DATASET,
-                                 epochs=TEST_EPOCHS,
-                                 episodes=EPISODES,
-                                 ways=WAYS,
-                                 shots=SHOTS,
-                                 query_num=QUERY_NUM)
+    relationnet.meta_testing(embedding_model=EMBEDDING_MODEL,
+                             relation_model=RELATION_MODEL,
+                             test_dataset=TEST_DATASET,
+                             epochs=TEST_EPOCHS,
+                             episodes=EPISODES,
+                             ways=WAYS,
+                             shots=SHOTS,
+                             query_num=QUERY_NUM)
 
 
 if __name__ == '__main__':

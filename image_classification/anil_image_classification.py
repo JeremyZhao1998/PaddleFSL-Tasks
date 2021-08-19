@@ -312,18 +312,16 @@ def main():
     FEATURE_MODEL.load_dict(state_dict)
     state_dict = paddle.load(train_dir + '/' + TEST_PARAM_FILE + 'head.params')
     HEAD_LAYER.load_dict(state_dict)
-    for i in range(10):
-        anil.meta_testing(feature_model=FEATURE_MODEL,
-                          head_layer=HEAD_LAYER,
-                          test_dataset=TEST_DATASET,
-                          test_epoch=TEST_EPOCH,
-                          test_batch_size=META_BATCH_SIZE,
-                          ways=WAYS,
-                          shots=SHOTS,
-                          inner_lr=INNER_LR,
-                          inner_adapt_steps=TEST_INNER_ADAPT_STEPS,
-                          approximate=APPROXIMATE)
-        print('\n')
+    anil.meta_testing(feature_model=FEATURE_MODEL,
+                      head_layer=HEAD_LAYER,
+                      test_dataset=TEST_DATASET,
+                      test_epoch=TEST_EPOCH,
+                      test_batch_size=META_BATCH_SIZE,
+                      ways=WAYS,
+                      shots=SHOTS,
+                      inner_lr=INNER_LR,
+                      inner_adapt_steps=TEST_INNER_ADAPT_STEPS,
+                      approximate=APPROXIMATE)
 
 
 if __name__ == '__main__':
