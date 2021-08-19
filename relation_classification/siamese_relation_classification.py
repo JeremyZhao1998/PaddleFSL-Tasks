@@ -144,16 +144,15 @@ def main():
     print(train_dir)
     state_dict = paddle.load(train_dir + '/' + TEST_PARAM_FILE)
     MODEL.load_dict(state_dict)
-    for i in range(10):
-        siamese.meta_testing(
-            model=MODEL,
-            test_dataset=TEST_DATASET,
-            epochs=TEST_EPOCHS,
-            episodes=EPISODES,
-            ways=WAYS,
-            shots=SHOTS,
-            query_num=QUERY_NUM
-        )
+    siamese.meta_testing(
+        model=MODEL,
+        test_dataset=TEST_DATASET,
+        epochs=TEST_EPOCHS,
+        episodes=EPISODES,
+        ways=WAYS,
+        shots=SHOTS,
+        query_num=QUERY_NUM
+    )
 
 
 if __name__ == '__main__':

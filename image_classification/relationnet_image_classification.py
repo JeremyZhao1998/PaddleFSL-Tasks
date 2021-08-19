@@ -236,17 +236,17 @@ SHOTS = 5
 QUERY_NUM = 15
 EMBEDDING_MODEL = paddlefsl.backbones.ConvEmbedModel(input_size=(3, 84, 84))
 RELATION_MODEL = paddlefsl.backbones.ConvRelationModel(input_size=EMBEDDING_MODEL.output_size)
-LR = paddle.optimizer.lr.ExponentialDecay(learning_rate=2e-4, gamma=0.5)
+LR = 0.001
 OPTIMIZER = paddle.optimizer.Adam(learning_rate=LR,
                                   parameters=EMBEDDING_MODEL.parameters() + RELATION_MODEL.parameters())
-EPOCHS = 50
+EPOCHS = 10
 TEST_EPOCHS = 10
 EPISODES = 1000
 REPORT_EPOCH = 1
 LR_STEP_EPOCH = 10
 SAVE_MODEL_EPOCH = 10
 SAVE_MODEL_ROOT = '~/trained_models'
-TEST_PARAM_FILE = 'epoch50'
+TEST_PARAM_FILE = 'epoch10'
 # ----------------------------------------------------------------------------------"""
 
 

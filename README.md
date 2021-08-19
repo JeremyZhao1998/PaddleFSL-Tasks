@@ -5,5 +5,6 @@ This repository contains all the example files and trained model parameters of `
 
 PaddleFSL package is now available on pypi: paddlefsl. You can install the package from source or using pip install.
 
-PaddleFSL provides examples of image classification tasks in computer vision and relation classification tasks in natural language processing. This repository saves the parameters of the models during training. You can build models as is shown in the example python files, load the pretrained model parameters directly and test the result. The models are trained only on training set and adjust the hyper-parameters on validation set of each dataset.
+PaddleFSL provides examples of image classification tasks in computer vision and relation classification tasks in natural language processing. In repository, the python files records all the settings and hyper-parameters of every task.
 
+This repository also saves the parameters of the models during training. You can build models as is shown in the example python files, load the pretrained model parameters directly and test the result. The models are trained only on training set and adjust the hyper-parameters on validation set of each dataset.
